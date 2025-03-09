@@ -11,8 +11,6 @@ const int LED_PIN_G = 6;
 volatile int flag_r = 0;
 volatile int flag_g = 0;
 
-volatile int g_timer_0 = 0;
-volatile int g_timer_1 = 0;
 
 repeating_timer_t timer_0;
 repeating_timer_t timer_1;
@@ -76,13 +74,6 @@ int main() {
 
 
     while (true) {
-        if (g_timer_0) {
-            gpio_put(LED_PIN_R, !gpio_get(LED_PIN_R));
-            g_timer_0 = 0;
-        }
-        if (g_timer_1) {
-            gpio_put(LED_PIN_G, !gpio_get(LED_PIN_G));
-            g_timer_1 = 0;
-        }
+        
     }
 }
